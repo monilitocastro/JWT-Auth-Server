@@ -20,7 +20,7 @@ const localLogin = new LocalStrategy( localOptions, function(email, password, do
         }
 
         if(!user){
-            done(null, false);
+            return done(null, false);
         }
 
        user.comparePassword(password, function(err, isMatch){
@@ -36,7 +36,6 @@ const localLogin = new LocalStrategy( localOptions, function(email, password, do
        });
 
     });
-
 
 });
 // set up options for strategy
